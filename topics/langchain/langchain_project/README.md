@@ -6,18 +6,44 @@
 
 ## 整体架构
 
+系统由两条独立流程组成，共享同一个向量数据库。
+
 ```
-用户输入
-   ↓
-向量检索（Chroma + 阿里 DashScope Embedding）
-   ↓
-格式化 context + 对话历史
-   ↓
-Prompt Template
-   ↓
-DeepSeek Chat 模型
-   ↓
-流式输出回答
+┌─────────────────────────────────────────────────────────────────┐
+│                      知识库构建流程                               │
+│                   （app_file_uploader.py）                       │
+│                                                                  │
+│   运营人员上传 .txt 文件                                          │
+│          ↓                                                       │
+│   MD5 去重校验（data/md5.txt）                                    │
+│          ↓                                                       │
+│   RecursiveCharacterTextSplitter 分块                            │
+│   （chunk_size=1000 / overlap=100）                              │
+│          ↓                                                       │
+│   DashScope text-embedding-v4 向量化                             │
+│          ↓                                                       │
+│   写入 Chroma 向量数据库（chroma_db/）                            │
+│   附带元数据：source / create_time / operator                     │
+└──────────────────────────┬──────────────────────────────────────┘
+                           │
+                    共享向量数据库
+                           │
+┌──────────────────────────▼──────────────────────────────────────┐
+│                      对话检索流程                                 │
+│                      （app_chat.py）                             │
+│                                                                  │
+│   用户输入问题                                                    │
+│          ↓                                                       │
+│   Chroma 相似度检索（k=1）                                        │
+│          ↓                                                       │
+│   拼装 context + 对话历史（file_history_store.py）                │
+│          ↓                                                       │
+│   Prompt Template 注入 System Prompt                             │
+│          ↓                                                       │
+│   DeepSeek Chat 模型推理                                         │
+│          ↓                                                       │
+│   流式输出回答 → 保存至对话历史                                    │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 ---

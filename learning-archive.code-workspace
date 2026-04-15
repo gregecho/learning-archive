@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "learning-archive (root)",
+			"path": "."
+		},
+		{
+			"name": "langchain — practice",
+			"path": "topics/langchain/langchain_practice"
+		},
+		{
+			"name": "langchain — project",
+			"path": "topics/langchain/langchain_project"
+		}
+	],
+	"settings": {
+		"python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
+	}
+}

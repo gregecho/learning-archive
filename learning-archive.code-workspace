@@ -12,5 +12,9 @@
       "name": "🚀 LangChain AI Chat",
       "path": "topics/langchain/langchain_AI_Chat",
     },
+    {
+      "name": "🚀 LangChain-ReAct-Agent",
+      "path": "topics/langchain/LangChain-ReAct-Agent",
+    },
   ],
 }

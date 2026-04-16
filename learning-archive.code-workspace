@@ -3,7 +3,7 @@
     // {
     //   "name": "learning-archive (root)",
     //   "path": ".",
-    // },/Users/maura/Downloads/扫地机器人100问.pdf
+    // },
     {
       "name": "🧪 LangChain Practice",
       "path": "topics/langchain/langchain_practice",
@@ -13,8 +13,8 @@
       "path": "topics/langchain/langchain_AI_Chat",
     },
     {
-      "name": "🚀 LangChain-ReAct-Agent",
-      "path": "topics/langchain/LangChain-ReAct-Agent",
+      "name": "🤖 LangChain-ReAct-Agent",
+      "path": "topics/langchain/langChain-ReAct-Agent",
     },
   ],
 }

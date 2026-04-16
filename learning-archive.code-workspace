@@ -14,7 +14,7 @@
     },
     {
       "name": "🤖 LangChain-ReAct-Agent",
-      "path": "topics/langchain/langChain-ReAct-Agent",
+      "path": "topics/langchain/langchain_ReAct_Agent",
     },
   ],
 }

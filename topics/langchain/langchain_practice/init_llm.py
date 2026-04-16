@@ -6,6 +6,7 @@ from env_utils import (
     DEEPSEEK_BASE_URL,
     ANTHROPIC_BASE_URL,
     ANTHROPIC_API_KEY,
+    DASHSCOPE_API_KEY,
 )
 
 # 2. 通过统一方式调用
@@ -34,4 +35,5 @@ deepseek_llm = init_chat_model(
 deepseek_embedding = OpenAIEmbeddings(
     model="text-embedding-3-small",
     base_url=DEEPSEEK_BASE_URL,
+    api_key=DASHSCOPE_API_KEY,
 )

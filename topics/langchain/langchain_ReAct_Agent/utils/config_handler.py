@@ -1,5 +1,5 @@
 import yaml
-from path_tool import get_absolute_path
+from utils.path_tool import get_absolute_path
 
 
 def get_rag_config(

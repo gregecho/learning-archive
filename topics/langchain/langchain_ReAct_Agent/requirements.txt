@@ -1,0 +1,15 @@
+# Python 3.13
+langchain==1.2.15
+langchain-core==1.2.24
+langchain-community==0.4.1
+langchain-chroma==1.1.0
+langchain-deepseek==1.0.1
+langchain-openai==1.1.12
+langchain-text-splitters==1.1.1
+chromadb==1.5.7
+dashscope==1.25.16
+pypdf==6.10.2
+python-dotenv==1.2.2
+pyyaml==6.0.3
+streamlit==1.55.0
+openai==2.31.0

@@ -1,6 +1,6 @@
 import os
 import hashlib
-from logger_handler import logger
+from utils.logger_handler import logger
 from langchain_core.documents import Document
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 
@@ -28,7 +28,7 @@ def get_file_md5_hex(filepath: str):
         logger.error(f"[md5计算]计算{filepath}失败, {str(e)}")
 
 
-def listdir_with_allowed_type(path: str, allowed_types: tuple[str]):
+def listdir_with_allowed_type(path: str, allowed_types: tuple[str]) -> tuple[str]:
     files = []
     if not os.path.exists(path):
         logger.error(f"[listdir_with_allowed_type]{path}不是文件夹")
@@ -38,7 +38,7 @@ def listdir_with_allowed_type(path: str, allowed_types: tuple[str]):
         if f.endswith(allowed_types):
             files.append(os.path.join(path, f))
 
-    return files
+    return tuple(files)
 
 
 def pdf_loader(filepath: str, password=None) -> list[Document]:
@@ -46,4 +46,4 @@ def pdf_loader(filepath: str, password=None) -> list[Document]:
 
 
 def txt_loader(filepath: str) -> list[Document]:
-    return TextLoader(filepath).load()
+    return TextLoader(filepath, encoding="utf-8").load()

@@ -4,7 +4,7 @@ from math import log
 from os import makedirs
 import os
 from venv import logger
-from path_tool import get_absolute_path
+from utils.path_tool import get_absolute_path
 
 LOG_ROOT = get_absolute_path("logs")
 makedirs(LOG_ROOT, exist_ok=True)

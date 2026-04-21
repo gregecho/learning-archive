@@ -4,17 +4,21 @@
     //   "name": "learning-archive (root)",
     //   "path": ".",
     // },
+    // {
+    //   "name": "🧪 LangChain Practice",
+    //   "path": "topics/langchain/langchain_practice",
+    // },
+    // {
+    //   "name": "🚀 LangChain AI Chat",
+    //   "path": "topics/langchain/langchain_AI_Chat",
+    // },
+    // {
+    //   "name": "🤖 LangChain-ReAct-Agent",
+    //   "path": "topics/langchain/langchain_ReAct_Agent",
+    // },
     {
-      "name": "🧪 LangChain Practice",
-      "path": "topics/langchain/langchain_practice",
-    },
-    {
-      "name": "🚀 LangChain AI Chat",
-      "path": "topics/langchain/langchain_AI_Chat",
-    },
-    {
-      "name": "🤖 LangChain-ReAct-Agent",
-      "path": "topics/langchain/langchain_ReAct_Agent",
+      "name": "🛟 learning-PyTorch",
+      "path": "topics/pytorch/learning-pytorch",
     },
   ],
 }

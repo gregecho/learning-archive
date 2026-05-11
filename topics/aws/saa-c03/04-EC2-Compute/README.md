@@ -1,6 +1,6 @@
 # 03 EC2 Compute
 
-## Index
+## 📋 Index
 
 - [03 EC2 Compute](#03-ec2-compute)
   - [Index](#index)

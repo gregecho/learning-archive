@@ -1,6 +1,6 @@
 # 04 High Availability and Scalability
 
-## Index
+## 📋 Index
 - [Module Objectives](#module-objectives)
 - [Fundamental Concepts](#fundamental-concepts)
 - [Architecture and Components](#architecture-and-components)
@@ -10,7 +10,7 @@
 - [For the Exam](#for-the-exam)
 - [Related Links](#related-links)
 
-## Module Objectives
+## 🎯 Module Objectives
 
 Upon completing this module, you should be able to:
 
@@ -20,7 +20,7 @@ Upon completing this module, you should be able to:
 - explain cross-zone load balancing and its impact on cost and distribution
 - configure correct health checks for an environment with ELB and ASG
 
-## Fundamental Concepts
+## 📚 Fundamental Concepts
 
 ### Elastic Load Balancing
 
@@ -120,7 +120,7 @@ ASG determines if an instance is healthy via two types of health checks:
 
 ASG follows a selection logic to terminate instances on scale-in: first selects the AZ with the most instances, then within that AZ chooses based on the configured policy (default: oldest instance by launch template/config, then closest to the next billable hour). Custom policies available: OldestInstance, NewestInstance, OldestLaunchTemplate, ClosestToNextInstanceHour, and AllocationStrategy.
 
-## Architecture and Components
+## 🏗️ Architecture and Components
 
 ```text
 Internet / Clients
@@ -153,7 +153,7 @@ Internet / Clients
          SNS / Lambda / EventBridge
 ```
 
-## Important Exam Configurations
+## ⚙️ Important Exam Configurations
 
 | Item | Default / Maximum value | Notes |
 |---|---|---|
@@ -167,7 +167,7 @@ Internet / Clients
 | Healthy threshold | 5 checks | Consecutive to mark healthy |
 | Unhealthy threshold | 2 checks | Consecutive to mark unhealthy |
 
-## Service Comparison
+## 🔄 Service Comparison
 
 | Feature | ALB | NLB | GWLB |
 |---|---|---|---|
@@ -188,7 +188,7 @@ Internet / Clients
 | Scheduled | Predictable traffic pattern | Avoids lag in scale-out |
 | Predictive | Recurring and predictable peaks | Provisions before peak |
 
-## Exam Tips and Pitfalls
+## 💡 Exam Tips and Pitfalls
 
 - ALB has dynamic IP (DNS). If the client needs a fixed IP on the firewall, the answer is NLB with Elastic IP.
 - GWLB does not distribute application traffic — it inspects and forwards. Confusing it with ALB is a trap.
@@ -199,7 +199,7 @@ Internet / Clients
 - Cross-zone balancing on NLB has inter-AZ transfer cost. If the question mentions cost, evaluate whether cross-zone is necessarily enabled.
 - Predictive Scaling requires 14 days of history to work well. For new environments, Target Tracking or Scheduled is more appropriate.
 
-## For the Exam
+## 💡 For the Exam
 
 - HTTP/gRPC, path routing, Lambda target → ALB. TCP/UDP, fixed IP, PrivateLink → NLB. Third-party security appliance → GWLB.
 - Predictable peak = Scheduled + Predictive. Proportional workload = Target Tracking. Graduated response = Step Scaling.
@@ -207,7 +207,7 @@ Internet / Clients
 - Launch Template surpasses Launch Configuration in all new scenarios.
 - Lifecycle Hooks = automation before entering service or before leaving.
 
-## Related Links
+## 📎 Related Links
 
 - [Module Questions](./questions.md)
 - [Module Flashcards](./flashcards.md)

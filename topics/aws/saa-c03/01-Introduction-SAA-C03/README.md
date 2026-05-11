@@ -1,14 +1,17 @@
 # 01 Introduction SAA-C03
 
 ## 📋 Table of Contents
-- [Module Objectives](#-module-objectives)
-- [Fundamental Concepts](#-fundamental-concepts)
-- [Architecture and Components](#-architecture-and-components)
-- [Important Exam Configurations](#-important-exam-configurations)
-- [Service Comparison](#-service-comparison)
-- [Exam Tips and Pitfalls](#-exam-tips-and-pitfalls)
-- [For the Exam](#-for-the-exam)
-- [Related Links](#-related-links)
+
+- [01 Introduction SAA-C03](#01-introduction-saa-c03)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [🎯 Module Objectives](#-module-objectives)
+  - [📚 Fundamental Concepts](#-fundamental-concepts)
+  - [🏗️ Architecture and Components](#️-architecture-and-components)
+  - [⚙️ Important Exam Configurations](#️-important-exam-configurations)
+  - [🔄 Service Comparison](#-service-comparison)
+  - [💡 Exam Tips and Pitfalls](#-exam-tips-and-pitfalls)
+  - [💡 For the Exam](#-for-the-exam)
+  - [📎 Related Links](#-related-links)
 
 ## 🎯 Module Objectives
 
@@ -81,29 +84,29 @@ The diagram below represents how the exam typically connects the main architectu
 
 ## ⚙️ Important Exam Configurations
 
-| Item | Value / Weight | Why it matters |
-|---|---:|---|
-| Questions | 65 | Defines exam pace and time prioritization |
-| Total time | 130 minutes | Average close to 2 minutes per question |
-| Resilient domain | 30% | Highest weight, appears in HA, DR, and decoupling |
-| High-Performing domain | 28% | Strong presence in EC2, storage, and databases |
-| Secure domain | 24% | IAM, KMS, VPC, and auditing appear frequently |
-| Cost-Optimized domain | 18% | Lowest formal weight, but present in almost all comparisons |
-| Default region for labs | us-east-1 | Greatest compatibility and least friction with examples |
-| Keyword "least operational overhead" | High priority | Normally favors managed services |
-| Keyword "multi-Region" | High priority | Usually eliminates multi-AZ-only answers |
-| Keyword "near real-time" | High priority | May indicate streaming, queues, or continuous replication |
+| Item                                 | Value / Weight | Why it matters                                              |
+| ------------------------------------ | -------------: | ----------------------------------------------------------- |
+| Questions                            |             65 | Defines exam pace and time prioritization                   |
+| Total time                           |    130 minutes | Average close to 2 minutes per question                     |
+| Resilient domain                     |            30% | Highest weight, appears in HA, DR, and decoupling           |
+| High-Performing domain               |            28% | Strong presence in EC2, storage, and databases              |
+| Secure domain                        |            24% | IAM, KMS, VPC, and auditing appear frequently               |
+| Cost-Optimized domain                |            18% | Lowest formal weight, but present in almost all comparisons |
+| Default region for labs              |      us-east-1 | Greatest compatibility and least friction with examples     |
+| Keyword "least operational overhead" |  High priority | Normally favors managed services                            |
+| Keyword "multi-Region"               |  High priority | Usually eliminates multi-AZ-only answers                    |
+| Keyword "near real-time"             |  High priority | May indicate streaming, queues, or continuous replication   |
 
 ## 🔄 Service Comparison
 
-| Exam situation | Stronger option | Common alternative | Practical rule |
-|---|---|---|---|
-| Global HTTP application with cache | CloudFront | Global Accelerator | CloudFront is edge cache and CDN; GA accelerates TCP/UDP or HTTP without cache |
-| Event-driven API | EventBridge | SNS | EventBridge is better for rule-based routing and multiple producers |
-| Relational database with managed HA | RDS Multi-AZ | EC2 self-managed DB | For the exam, AWS almost always prefers the managed service |
-| Ultra-low latency with predictable key-value access | DynamoDB | RDS | Use DynamoDB when horizontal scalability is the priority |
-| Compute with minimal administration and variable traffic | Lambda | EC2 | Lambda tends to win if the scenario tolerates serverless limits |
-| Secret encryption with native rotation | Secrets Manager | Parameter Store | Secrets Manager is the strongest answer for rotatable sensitive secrets |
+| Exam situation                                           | Stronger option | Common alternative  | Practical rule                                                                 |
+| -------------------------------------------------------- | --------------- | ------------------- | ------------------------------------------------------------------------------ |
+| Global HTTP application with cache                       | CloudFront      | Global Accelerator  | CloudFront is edge cache and CDN; GA accelerates TCP/UDP or HTTP without cache |
+| Event-driven API                                         | EventBridge     | SNS                 | EventBridge is better for rule-based routing and multiple producers            |
+| Relational database with managed HA                      | RDS Multi-AZ    | EC2 self-managed DB | For the exam, AWS almost always prefers the managed service                    |
+| Ultra-low latency with predictable key-value access      | DynamoDB        | RDS                 | Use DynamoDB when horizontal scalability is the priority                       |
+| Compute with minimal administration and variable traffic | Lambda          | EC2                 | Lambda tends to win if the scenario tolerates serverless limits                |
+| Secret encryption with native rotation                   | Secrets Manager | Parameter Store     | Secrets Manager is the strongest answer for rotatable sensitive secrets        |
 
 ## 💡 Exam Tips and Pitfalls
 
@@ -124,7 +127,7 @@ The diagram below represents how the exam typically connects the main architectu
 
 ## 📎 Related Links
 
-- [Module questions](./questoes.md)
+- [Module questions](./questions.md)
 - [Module flashcards](./flashcards.md)
 - [Module cheatsheet](./cheatsheet.md)
 - [Module use cases](./casos-de-uso.md)
@@ -133,4 +136,3 @@ The diagram below represents how the exam typically connects the main architectu
 - [Module 02: IAM and Security](../02-IAM-e-Seguranca/)
 - [Module 16: Well-Architected Framework](../16-Well-Architected-Framework/)
 - [Module 19: Practice Exams and Questions](../19-Simulados-e-Questoes/)
-

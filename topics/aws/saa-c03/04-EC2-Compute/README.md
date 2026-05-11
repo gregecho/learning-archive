@@ -4,8 +4,8 @@
 
 - [03 EC2 Compute](#03-ec2-compute)
   - [Index](#index)
-  - [Module Objectives](#module-objectives)
-  - [Fundamental Concepts](#fundamental-concepts)
+  - [🎯 Module Objectives](#-module-objectives)
+  - [📚 Fundamental Concepts](#-fundamental-concepts)
     - [Instance Families](#instance-families)
     - [Purchasing Models](#purchasing-models)
     - [EC2 User Data and Instance Metadata](#ec2-user-data-and-instance-metadata)
@@ -15,14 +15,14 @@
     - [Instance Store](#instance-store)
     - [Placement Groups](#placement-groups)
     - [Instance Lifecycle](#instance-lifecycle)
-  - [Architecture and Components](#architecture-and-components)
-  - [Important Exam Configurations](#important-exam-configurations)
-  - [Service Comparison](#service-comparison)
-  - [Exam Tips and Pitfalls](#exam-tips-and-pitfalls)
-  - [For the Exam](#for-the-exam)
-  - [Related Links](#related-links)
+  - [🏗️ Architecture and Components](#️-architecture-and-components)
+  - [⚙️ Important Exam Configurations](#️-important-exam-configurations)
+  - [🔄 Service Comparison](#-service-comparison)
+  - [💡 Exam Tips and Pitfalls](#-exam-tips-and-pitfalls)
+  - [💡 For the Exam](#-for-the-exam)
+  - [📎 Related Links](#-related-links)
 
-## Module Objectives
+## 🎯 Module Objectives
 
 Upon completing this module, you should be able to:
 
@@ -33,7 +33,7 @@ Upon completing this module, you should be able to:
 - choose the correct placement group type for each latency or isolation requirement
 - describe IMDSv2 and User Data and apply them in instance automation questions
 
-## Fundamental Concepts
+## 📚 Fundamental Concepts
 
 ### Instance Families
 
@@ -131,7 +131,7 @@ Instance Store is temporary storage directly on the physical disks of the server
 
 **Terminate**: deletes the instance and, by default, the EBS root volume. Additional volumes can be configured to persist with `DeleteOnTermination=false`.
 
-## Architecture and Components
+## 🏗️ Architecture and Components
 
 ```text
 ┌─────────────────────────────────────────────────────┐
@@ -160,7 +160,7 @@ Placement Groups:
   Partition:  P1[ i1,i2 ] P2[ i3,i4 ] P3[ i5,i6 ]  ← racks per partition
 ```
 
-## Important Exam Configurations
+## ⚙️ Important Exam Configurations
 
 | Item                            | Value             | Notes                             |
 | ------------------------------- | ----------------- | --------------------------------- |
@@ -175,7 +175,7 @@ Placement Groups:
 | IMDSv2 default token TTL        | 6 hours           | Configurable at creation          |
 | Spot interruption notice        | 2 minutes         | Via metadata and EventBridge      |
 
-## Service Comparison
+## 🔄 Service Comparison
 
 | Purchasing Model        | Discount       | Commitment              | Ideal for                               |
 | ----------------------- | -------------- | ----------------------- | --------------------------------------- |
@@ -197,7 +197,7 @@ Placement Groups:
 | st1               | Big data, logs, sequential | 500      |       500 MBps | No    |
 | sc1               |      Cold, cheap archiving | 250      |       250 MBps | No    |
 
-## Exam Tips and Pitfalls
+## 💡 Exam Tips and Pitfalls
 
 - T3 burstable in continuous high-CPU workloads will exhaust credits and underperform — Watch out for questions describing unexpected performance degradation.
 - Instance Store does not persist after stop or terminate. If the question mentions "temporary high-performance cache data," Instance Store may be the answer; if it mentions persistence, it is not.
@@ -208,14 +208,14 @@ Placement Groups:
 - Cluster Placement Groups are in a single AZ. If the question asks for multi-AZ distribution, Cluster does not work.
 - IMDSv2 is more secure than IMDSv1. AWS recommends IMDSv2 only; in infrastructure security questions, prefer IMDSv2 as the answer.
 
-## For the Exam
+## 💡 For the Exam
 
 - Family M = balanced, C = compute, R = memory, I = storage, T = burstable. If the workload is described, map it to the family.
 - Stable long-term production = Reserved or Savings Plans. Unpredictable burst = On-Demand. Interruption-tolerant = Spot.
 - High IOPS and consistent latency = io2. Adequate performance and lower cost = gp3. Big sequential data = st1. Minimum cost without performance = sc1.
 - Inter-node HPC = Cluster PG. Critical per-instance high availability = Spread PG. HDFS/Cassandra/Kafka with rack awareness = Partition PG.
 
-## Related Links
+## 📎 Related Links
 
 - [Module Questions](./questions.md)
 - [Module Flashcards](./flashcards.md)
@@ -225,5 +225,3 @@ Placement Groups:
 - [Official Links](./links.md)
 - [Module 04: High Availability and Scalability](../05-High-Availability-and-Scalability/)
 - [Module 05: Amazon S3 and Storage](../06-Amazon-S3-and-Storage/)
-
----

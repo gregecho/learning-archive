@@ -16,9 +16,17 @@
     //   "name": "🤖 LangChain-ReAct-Agent",
     //   "path": "topics/langchain/langchain_ReAct_Agent",
     // },
+    // {
+    //   "name": "🛟 learning-PyTorch",
+    //   "path": "topics/pytorch/learning-pytorch",
+    // },
+    // {
+    //   "name": "🚨 Transformer-Attention",
+    //   "path": "topics/transformers/transformer-attention",
+    // },
     {
-      "name": "🛟 learning-PyTorch",
-      "path": "topics/pytorch/learning-pytorch",
+      "name": "🔋 SAA-C03",
+      "path": "topics/aws/saa-c03",
     },
   ],
 }
